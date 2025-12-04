@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>HelloWorld dApp - Sepolia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Ethers v6 en UMD (pour le navigateur) -->
+    <script src="https://cdn.jsdelivr.net/npm/ethers@6.13.2/dist/ethers.umd.min.js"></script>
+
+    <!-- Notre script -->
+    <script defer src="script.js"></script>
+
+    <style>
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        background: #0f172a;
+        color: #e5e7eb;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+      }
+
+      .app {
+        background: #020617;
+        border-radius: 16px;
+        padding: 24px 28px;
+        max-width: 480px;
+        width: 100%;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        border: 1px solid #1f2937;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+        margin: 0 0 4px;
+      }
+
+      .subtitle {
+        font-size: 0.9rem;
+        color: #9ca3af;
+        margin-bottom: 16px;
+      }
+
+      button {
+        background: #16a34a;
+        color: white;
+        border: none;
+        border-radius: 999px;
+        padding: 8px 16px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: background 0.15s ease, transform 0.08s ease;
+      }
+
+      button:hover {
+        background: #22c55e;
+        transform: translateY(-1px);
+      }
+
+      button:disabled {
+        background: #4b5563;
+        cursor: not-allowed;
+        transform: none;
+      }
+
+      .row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 16px;
+        gap: 8px;
+      }
+
+      .label {
+        font-size: 0.85rem;
+        color: #9ca3af;
+      }
+
+      .value {
+        font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+          Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+        font-size: 0.8rem;
+        word-break: break-all;
+      }
+
+      .card {
+        background: #020617;
+        border-radius: 12px;
+        padding: 12px 14px;
+        border: 1px solid #1f2937;
+        margin-bottom: 14px;
+      }
+
+      input {
+        width: 100%;
+        padding: 8px 10px;
+        border-radius: 8px;
+        border: 1px solid #374151;
+        background: #020617;
+        color: #e5e7eb;
+        font-size: 0.9rem;
+        outline: none;
+      }
+
+      input:focus {
+        border-color: #22c55e;
+      }
+
+      .status {
+        font-size: 0.8rem;
+        color: #9ca3af;
+        min-height: 1.2em;
+        margin-top: 4px;
+      }
+
+      .message-display {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-top: 4px;
+        word-break: break-word;
+      }
+
+      .section-title {
+        font-size: 0.95rem;
+        font-weight: 600;
+        margin-bottom: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="app">
+      <div class="row">
+        <div>
+          <h1>HelloWorld dApp</h1>
+          <div class="subtitle">Réseau : Sepolia (testnet)</div>
+        </div>
+        <button id="connectButton">Connect Wallet</button>
+      </div>
+
+      <div class="card">
+        <div class="label">Compte connecté</div>
+        <div id="accountDisplay" class="value">Non connecté</div>
+      </div>
+
+      <div class="card">
+        <div class="label">Adresse du contrat HelloWorld</div>
+        <div id="contractAddress" class="value">
+          0xE913A381F9b5f28eE49E6Fc929Da7C607580C870
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Message actuel</div>
+        <div id="currentMessage" class="message-display">
+          (Clique sur "Connect Wallet" puis sur "Lire le message")
+        </div>
+        <button id="readButton" style="margin-top: 8px; width: 100%">
+          Lire le message
+        </button>
+      </div>
+
+      <div class="card">
+        <div class="section-title">Mettre à jour le message</div>
+        <input
+          id="newMessageInput"
+          type="text"
+          placeholder="Nouveau message..."
+        />
+        <button id="updateButton" style="margin-top: 8px; width: 100%">
+          Envoyer la transaction
+        </button>
+        <div id="txStatus" class="status"></div>
+      </div>
+    </div>
+  </body>
+</html>
