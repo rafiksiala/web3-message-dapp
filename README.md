@@ -1,5 +1,5 @@
 
-# 🧪 Message dApp (Sepolia)
+# Message dApp (Sepolia)
 
 This is a simple Web3 decentralized application (dApp) that interacts with a
 HelloWorld smart contract deployed on the **Sepolia testnet**.
@@ -20,7 +20,7 @@ This project is built using:
 
 ---
 
-## 🚀 Smart Contract
+## Smart Contract
 
 The smart contract is deployed on Sepolia at:
 
@@ -55,7 +55,7 @@ contract HelloWorld {
 
 ---
 
-## 🖥️ Frontend
+## Frontend
 
 The entire frontend is contained in `index.html`, `script.js`, and `helloworld-abi.js`.
 
@@ -73,7 +73,7 @@ contract using MetaMask as a provider.
 
 ---
 
-## 📦 Run Locally
+## Run Locally
 
 Clone the repo:
 
@@ -105,7 +105,7 @@ https://rafiksiala.github.io/web3-message-dapp/
 
 ---
 
-## 🔗 Smart Contract Interaction
+## Smart Contract Interaction
 
 The dApp interacts with the deployed contract using the ABI defined in:
 
@@ -131,11 +131,11 @@ Ethers.js v6 is used to:
 
 ---
 
-## 📡 Network
+## Network
 
 Make sure MetaMask is set to:
 
-🔗 **Ethereum Sepolia Testnet**
+ **Ethereum Sepolia Testnet**
 
 If it does not appear, enable test networks:
 
@@ -147,7 +147,7 @@ You will also need Sepolia ETH for gas (free faucet):
 
 ---
 
-## 🧪 Example Flow
+## Example Flow
 
 1. Connect wallet
 2. Click **Read Message**
@@ -163,7 +163,7 @@ You can verify all transactions on:
 
 ---
 
-## 📀 Deployment (optional)
+## Deployment (optional)
 
 To redeploy the smart contract using Hardhat Ignition:
 
@@ -175,11 +175,6 @@ Scripts for reading and updating the contract are available in the backend.
 
 ---
 
-## 📜 License
-
-MIT License. Feel free to use and modify.
-
----
 
 ## 👨‍💻 Author
 
